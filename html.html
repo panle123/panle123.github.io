@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-1.11.0.min.js"></script>
+    <script src="jquery-1.11.2.js"></script>
+    <script src="jquery-1.6.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $("#btn").click(function(){$("p:nth-child(even)").addClass("high");});
+        // $("p").addClass("high");
+        // $("p").mouseover(function(){$("p").addClass("highlight");});
+        // $("p:nth-child(odd)").mouseover(function(){$("p:nth-child(odd)").addClass("big");});
+        // $("p:nth-child(odd)").mouseout(function(){$("p:nth-child(odd)").addClass("small");});
+        $("div[class*= x]").addClass("high");
+        $("p[class~= top]").addClass("high");
+            function swing() {
+                    $("h3").animate({left:"1000"},1000)
+                            .animate({left:"0"},1000, swing);
+                }
+                swing();
+        
+        });
+        </script>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    p{
+        width: 1000px;
+        height:30px;
+    }
+    .big{
+        width: 1000px;
+        height: 60px;
+    }
+    .highlight { background-color:red; }
+    .high { background-color:green; }
+    .small{
+        width: 500px;
+        height: 30px;
+    }
+    #btn{
+        position: absolute;
+        left: 500px;
+        left: 200px;
+    }
+    div{
+        width: 1000px;
+        height: 150px;
+    }
+  h3{background-color:green; color:white; width:220px; text-align: center;
+     position:relative; left:1000px; 
+   }
+    </style>
+</head>
+<body>
+    <h1>我是说</h1>
+<div>
+    
+    <p></p>
+    <p></p>
+    <p class="q zzz top"></p> 
+</div>
+  <div class="bb top"></div> 
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div> <h3>划水</h3>	</div>
+   
+
+
+</body>
+
+
+</html>
