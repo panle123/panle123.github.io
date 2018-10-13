@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<style type="text/css">
+
+
+	</style>
+</head>
+<body>
+    <ul id="ul">
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+        <li>4444</li>
+        <li>5555</li>
+    </ul>
+    
+    <script type="text/javascript">
+
+        var oul = document.getElementById("ul");
+        var ali = oul.getElementsByTagName("li");
+
+        // 方法一
+     //    for(var i = 0; i < ali.length; i++){
+     //        (function(i){   //这里的i类似形参 
+     //            ali[i].onclick = function (){  
+     //                alert(i);   
+     //            } 
+     //        })(i);   //这里的i类似实参
+       	// }  
+
+    	// 方法二  
+    	// 将变量 i 赋值给一个对象的携带属性 保存在每个段落对象（li）上
+    	// for (var i = 0; i < ali.length; i++) {
+    	// 	ali[i].flag = i
+    	// 	ali[i].onclick = function (){  
+     //                alert(this.flag);   
+     //            } 
+    	// }
+
+    	// 方法三
+    	// 将变量 i 保存在匿名函数自身
+    	// for (var i = 0; i < ali.length; i++) {
+    	// 	(ali[i].onclick = function(){
+    	// 		alert(arguments.callee.i)
+    	// 	}).i = i
+    	// }
+
+
+
+    	// 方法四
+    	// 还有一种使用ES6新语法 let 关键字 
+    	for (let i = 0; i < ali.length; i++) {
+    		ali[i].onclick = function(){
+    			alert(i)
+    		}
+    	}
+
+    </script>
+</body>
+
+</html>
