@@ -1,0 +1,32 @@
+【键盘绑定事件】
+【创建模板】
+【系统时间】
+document.onkeydown = function (event) {
+    var e = event || window.event || arguments.callee.caller.arguments[0];
+    if (e && e.keyCode == 13) {
+         // 时间函数
+var oDate = new Date(); //实例一个时间对象；
+oDate.getFullYear();   //获取系统的年；
+oDate.getMonth()+1;   //获取系统月份，由于月份是从0开始计算，所以要加1
+oDate.getDate(); // 获取系统日，
+oDate.getHours(); //获取系统时，
+oDate.getMinutes(); //分
+oDate.getSeconds(); //秒
+// 时间函数
+   //1.创建li
+   var myp = document.createElement('p');
+   //2.将input里边的内容给到li中
+   if(shuju.value != ''){
+         myp.innerHTML ='评论：'+ shuju.value +'</br>'+ oDate.getFullYear()+'/'+(oDate.getMonth()+1)+'/'+oDate.getDate()+'/'+oDate.getHours()+':'+oDate.getMinutes()+':'+oDate.getSeconds();
+   }
+ 
+   //3.再给li添加一个背景颜色
+   myp.style.cssText = 'margin-top:5px;margin-bottom:5px;font-size:12px;';
+   //4.再把li插入到ul后边
+   divjia.appendChild(myp);
+   //5.最后把input里边的内容清除
+   shuju.value = '';
+    }
+};
+
+

@@ -1,0 +1,9 @@
+BFC是css用来解决一些叠加bug的方法
+
+如何触发BFC：
+
+float:除none以外的值
+overflow除了visible以外的值（hidden,auto,scroll）
+display(table-cell , table-caption , inline-block , flex , inline-flex)
+position值为(absolute , fixed)
+fieldest元素

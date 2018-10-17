@@ -1,0 +1,31 @@
+【for...in...】
+用于遍历对象，不建议遍历数组！
+例如：
+var obj = {
+	name:'bob',
+	age: '18'
+}
+for(item in obj){
+	console.log(item + ':' + obj[item]);//输出属性名和属性值（就是键名键值）
+}
+
+
+使用for in遍历数组可能会存在以下问题：
+
+index索引为字符串型数字，不能直接进行几何运算
+遍历顺序有可能不是按照实际数组的内部顺序
+使用for in会遍历数组所有的可枚举属性，包括原型。
+所以for in更适合遍历对象，不要使用for in遍历数组。
+
+【for... of...】
+用于数组，如果用于对象就会报错。
+例如：
+var arr = [8,2,3,1,5];
+for(item of arr){
+	console.log(item)
+}
+集合了for in
+【forEach】
+es5里面的循环方法
+
+

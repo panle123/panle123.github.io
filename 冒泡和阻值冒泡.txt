@@ -1,0 +1,28 @@
+冒泡，怎么阻止冒泡
+例如：
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+　　<form id="form1" runat="server">
+　　　　<div id="divOne" onclick="alert('我是最外层');">
+　　　　　　<div id="divTwo" onclick="alert('我是中间层！')">
+
+　　　　　　　　<a id="hr_three" href="http://www.baidu.com">点击我</a>
+
+　　　　　　</div>
+　　　　</div>
+　　</form>
+</body>
+<script type="text/javascript">
+	hr_three.onclick = function(event){ 
+		alert('最里面层');
+		event.preventDefault();//阻止默认动作即该链接不会跳转。 
+		event.stopPropagation();//阻止冒泡事件，上级的单击事件不会被调用 
+		return false;//不仅阻止了事件往上冒泡，而且阻止了事件本身 
+}; 
+</script>
+</html>

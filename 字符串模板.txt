@@ -1,0 +1,45 @@
+【字符串模板】
+例如：
+success:function(data){
+                var len =  data.length;
+                var a = [];
+                for(var i=0;i<len;i++){
+                    var r = i%4+1;
+                    var img = './img/z_chao'+r+'.png';
+                    var shop = data[i].shop_name;
+                    var price=data[i].good_sales_price;
+                    var goods = data[i].shop_goods;
+                    var add = data[i].shop_add;
+                    var far = data[i].shop_far;
+                
+                    a = `<div id="moban">
+                    <div class="img">
+                        <img id="picture" src=${img} alt="图片跑了">
+                    </div>
+                    <div id="mowen">
+                        <p id="p_1">${shop}</p>
+                        <p>价格：<span id="p_2">${price}</span>元</p>
+                        <p>特色：<span id="p_3">${goods}</span></p>
+                        <p>地址：<span id="p_4">${add}</span></p>
+                        <p>距离：<span id="p_5">${far}</span></p>
+                    </div>
+                </div>`;
+                    $('#fanhui').append(a);
+     }
+}
+【用克隆的方法 ，bug有一个模板无法去除】
+例如：
+for(var i=0;i<len;i++){
+                    var r = i%4+1;
+                    var img = './img/z_chao'+r+'.png';
+
+		     $('#picture').attr('src',img);
+                     $('#picture').attr('src',img);
+                     $('#p_1').text(data[i].shop_name);
+                     $('#p_2').text(data[i].good_sales_price);
+                     $('#p_3').text(data[i].shop_goods);
+                     $('#p_4').text(data[i].shop_add);
+                     $('#p_5').text(data[i].shop_far);
+                     $("#moban").clone(true).appendTo("#fanhui");
+
+}

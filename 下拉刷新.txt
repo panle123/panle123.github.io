@@ -1,0 +1,41 @@
+var drag_content = document.getElementsByClassName('main_top')[0];
+ var put = document.getElementsByClassName('put')[0];
+ var imga = document.getElementsByClassName('put')[0].children[0];
+ console.log(imga)
+ drag_content.addEventListener("touchmove",drag);
+ drag_content.addEventListener("touchstart",dragStart);
+ drag_content.addEventListener("touchend",dragEnd);
+
+ function dragStart(e){
+  initY = e.touches[0].pageY;
+  console.log(initX);
+ }
+ function drag (e){
+    put.style.height = (e.touches[0].pageY - initY) + "px";
+  console.log(put.style.height);
+  if(parseInt(put.style.height)>=200){
+   
+   put.style.height = "200px";
+   }
+   if(parseInt(put.style.height)>140){
+    imga.style.width = "1.3rem";
+   }
+  
+ }
+ function dragEnd (e){
+  if(parseInt(put.style.height)>140){
+    put.style.height = "140px";
+   setTimeout(ania(),1000);
+   setTimeout(function(){
+    put.style.height = "2.625rem";
+    $('.put img').removeClass('abc')
+   },4000);
+  }else{
+       put.style.height = "2.625rem"; 
+  }
+  
+ }
+ function ania(){
+    //   $('.put img').animate({top:'50%'})
+    $('.put img').addClass('abc');
+}      
