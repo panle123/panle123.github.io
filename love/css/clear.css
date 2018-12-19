@@ -1,0 +1,29 @@
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{
+
+margin:0;
+
+padding:0;
+
+}
+
+input,select,textarea{outline:none;}
+li,ul{
+	list-style: none;
+}
+a{
+	color: black;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+button{
+	border:none;
+}
+input{
+	border: none;
+}
+body{
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
